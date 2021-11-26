@@ -1,4 +1,4 @@
-<h3 align="center"> All the answers from the SQLBolt <hr>
+<h3 align="center"> All of my answers from the SQLBolt <hr>
 
 Click [Here](https://sqlbolt.com/), If you want to improve your SQL skills and acquire more experience with difficult queries  <hr>
 

@@ -105,24 +105,116 @@ Review 1 — Tasks
 
 1. List all the Canadian cities and their populations
 ```
-
+SELECT City, Population FROM north_american_cities
+WHERE Country = 'Canada';
 ```
 2. Order all the cities in the United States by their latitude from north to south
 ```
-
+SELECT City FROM north_american_cities
+WHERE Country = 'United States'
+ORDER BY Latitude DESC;
 ```
 3. List all the cities west of Chicago, ordered from west to east
 ```
-
+SELECT City, Longitude FROM north_american_cities
+WHERE Longitude < -87.629798
+ORDER BY Longitude ASC;
 ```
 4.List the two largest cities in Mexico (by population)
 ```
-
+SELECT City, Population FROM north_american_cities
+WHERE Country = 'Mexico'
+ORDER BY Population DESC
+LIMIT 2;
 ```
 5. List the third and fourth largest cities (by population) in the United States and their population
 ```
+SELECT City, Population FROM north_american_cities
+WHERE Country LIKE 'United States'
+ORDER BY Population 
+LIMIT 2 OFFSET 2;
+```
+
+# SQL Lesson 6: Multi-table queries with JOINs
+
+Exercise 6 — Tasks
+
+1. Find the domestic and international sales for each movie
+```
+SELECT Title , Domestic_sales, International_sales FROM Movies 
+INNER JOIN Boxoffice ON
+Boxoffice.Movie_id = Movies.Id;
+```
+2. Show the sales numbers for each movie that did better internationally rather than domestically
+```
+SELECT Title, Domestic_sales,International_sales FROM Movies
+INNER JOIN Boxoffice ON 
+Movies.Id = Boxoffice.Movie_id
+WHERE International_sales > Domestic_sales;
+```
+3. List all the movies by their ratings in descending order
+```
+SELECT Title, Rating FROM Movies
+INNER JOIN Boxoffice ON
+Movies.Id = Boxoffice.Movie_id
+ORDER BY Rating DESC;
+```
+
+
+# SQL Lesson 7: OUTER JOINs
+
+Exercise 7 — Tasks
+1. Find the list of all buildings that have employees
+```
+SELECT DISTINCT Building FROM Employees;
+```
+2. Find the list of all buildings and their capacity
+```
+SELECT * FROM Buildings;
+```
+3. List all buildings and the distinct employee roles in each building (including empty buildings)
+```
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # SQL Lesson 10: Queries with aggregates (Pt. 1)
 

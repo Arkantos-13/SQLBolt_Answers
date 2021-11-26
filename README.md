@@ -72,14 +72,29 @@ Exercise 13 — Tasks
 
 1. Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
 ```
-INSERT INTO Movies 
-(Title,Director,Year,Length_minutes)
-VALUES
-('Toy Story 4', 'John Lasseter', 2013,100);
+INSERT INTO Movies VALUES (4, 'Toy Story 4', 'John Lasseter', 2013,100);
 ```
 2.Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table.
 ```
-INSERT INTO Boxoffice  VALUES (4, 8.7, 340000000, 270000000);
+INSERT INTO Boxoffice VALUES(4,8.7,340000000,270000000);
+```
+
+# SQL Lesson 14: Updating rows
+
+Exercise 14 — Tasks
+
+1. The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+```
+
+```
+
+2. The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+```
+
+```
+3. Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+```
+
 ```
 
 

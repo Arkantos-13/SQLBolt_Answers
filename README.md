@@ -3,6 +3,48 @@ Learn SQL with simple, interactive exercises <hr></h3>
 
 Visit the original site [Here!](https://sqlbolt.com/) if you wish to practise on your skills in SQL 
 
+
+# SQL Lesson 1: SELECT queries 101
+
+Exercise 1 — Tasks
+
+1. Find the title of each film
+```
+
+```
+
+2. Find the director of each film
+```
+
+```
+
+3. Find the title and director of each film
+```
+
+```
+4. Find the title and year of each film
+```
+
+```
+
+5. Find all the information about each film
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # SQL Lesson 10: Queries with aggregates (Pt. 1)
 
 Exercise 10 — Tasks

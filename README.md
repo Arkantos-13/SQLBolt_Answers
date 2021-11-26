@@ -29,8 +29,6 @@ GROUP BY Building;
 
 # SQL Lesson 11: Queries with aggregates (Pt. 2)
 
-For this exercise, you are going to dive deeper into Employee data at the film studio. Think about the different clauses you want to apply for each task
-
 Exercise 11 — Tasks
 
 1. Find the number of Artists in the studio (without a HAVING clause)
@@ -49,4 +47,34 @@ GROUP BY Role;
 SELECT Role, SUM(Years_employed) FROM Employees
 GROUP BY Role
 HAVING Role = 'Engineer';
+```
+
+# SQL Lesson 12: Order of execution of a Query
+
+Exercise 12 — Tasks
+
+1. Find the number of movies each director has directed
+```
+SELECT Director , COUNT(Title) AS Amount_of_Movies FROM Movies 
+GROUP BY Director;
+```
+2. Find the total domestic and international sales that can be attributed to each director
+```
+SELECT Director, SUM(Domestic_sales + International_sales) AS Sales FROM Movies 
+INNER JOIN Boxoffice  ON
+Movies.Id = Boxoffice.Movie_id
+GROUP BY Director;
+```
+
+# SQL Lesson 13: Inserting rows
+
+Exercise 13 — Tasks
+
+1. Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+```
+
+```
+2.Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table.
+```
+
 ```

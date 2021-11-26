@@ -1,7 +1,6 @@
-<h3 align="center"> SQLBolt
-Learn SQL with simple, interactive exercises <hr></h3>
+<h3 align="center"> All the answers from the SQLBolt <hr>
 
-Visit the original site [Here!](https://sqlbolt.com/) if you wish to practise on your skills in SQL 
+Click [Here](https://sqlbolt.com/), If you want to improve your SQL skills and acquire more experience with difficult queries  <hr>
 
 
 # SQL Lesson 1: SELECT queries 101
@@ -12,12 +11,10 @@ Exercise 1 — Tasks
 ```
 SELECT Title FROM movies;
 ```
-
 2. Find the director of each film
 ```
 SELECT Director FROM movies;
 ```
-
 3. Find the title and director of each film
 ```
 SELECT Title, Director FROM movies;
@@ -40,21 +37,17 @@ Exercise 2 — Tasks
 ```
 SELECT * FROM movies WHERE Id = 6;
 ```
-
 2. Find the movies released in the years between 2000 and 2010
 ```
 SELECT * FROM movies WHERE Year BETWEEN 2000 AND 2010;
-
 ```
 3. Find the movies not released in the years between 2000 and 2010
 ```
 SELECT * FROM movies WHERE Year NOT BETWEEN 2000 AND 2010;
-
 ```
 4. Find the first 5 Pixar movies and their release year
 ```
 SELECT Title, Year FROM movies LIMIT 5;
-
 ```
 
 
@@ -79,9 +72,11 @@ SELECT Title, Director FROM movies WHERE Director != 'John Lasseter';
 SELECT Title FROM movies WHERE Title LIKE '%WALL%';
 ```
 
+
 # SQL Lesson 4: Filtering and sorting Query results
 
 Exercise 4 — Tasks
+
 1. List all directors of Pixar movies (alphabetically), without duplicates
 ```
 SELECT DISTINCT Director FROM movies ORDER BY Director;
@@ -98,6 +93,7 @@ SELECT Title FROM movies ORDER BY Title LIMIT 5;
 ```
 SELECT Title FROM movies ORDER BY Title LIMIT 5 OFFSET 5;
 ```
+
 
 # SQL Review: Simple SELECT Queries
 
@@ -135,6 +131,7 @@ ORDER BY Population
 LIMIT 2 OFFSET 2;
 ```
 
+
 # SQL Lesson 6: Multi-table queries with JOINs
 
 Exercise 6 — Tasks
@@ -164,6 +161,7 @@ ORDER BY Rating DESC;
 # SQL Lesson 7: OUTER JOINs
 
 Exercise 7 — Tasks
+
 1. Find the list of all buildings that have employees
 ```
 SELECT DISTINCT Building FROM Employees;
@@ -174,46 +172,48 @@ SELECT * FROM Buildings;
 ```
 3. List all buildings and the distinct employee roles in each building (including empty buildings)
 ```
-
+SELECT DISTINCT Building_name, Role FROM Buildings 
+  LEFT JOIN Employees ON Building_name = Building;
 ```
 
 
+# SQL Lesson 8: A short note on NULLs
+
+Exercise 8 — Tasks
+
+1. Find the name and role of all employees who have not been assigned to a building
+```
+SELECT Name,Role FROM employees WHERE Building IS NULL;
+```
+2. Find the names of the buildings that hold no employees
+```
+SELECT DISTINCT Building_name FROM Buildings 
+  LEFT JOIN Employees ON Building_name = Building
+    WHERE Role IS NULL;
+```
 
 
+# SQL Lesson 9: Queries with expressions
 
+Exercise 9 — Tasks
 
+1. List all movies and their combined sales in millions of dollars
+```
+SELECT DISTINCT Title, (Domestic_sales + International_sales) / 1000000 AS Sales FROM Movies
+INNER JOIN Boxoffice ON 
+Movies.Id = Boxoffice.Movie_id;
+```
+2. List all movies and their ratings in percent
+```
+SELECT DISTINCT Title, (Rating * 10) AS Rating_Percent FROM Movies 
+INNER JOIN Boxoffice  ON 
+Movies.Id = Boxoffice.Movie_id;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+3. List all movies that were released on even number years
+```
+SELECT Title FROM Movies WHERE Year % 2 = 0;
+```
 
 
 # SQL Lesson 10: Queries with aggregates (Pt. 1)
@@ -225,13 +225,11 @@ Exercise 10 — Tasks
 ```
 SELECT MAX(Years_employed) FROM employees;
 ```
-
 2. For each role, find the average number of years employed by employees in that role
 
 ```
 SELECT Role, AVG(Years_employed) AS Average_Years FROM Employees GROUP BY Role;
 ```
-
 3. Find the total number of employee years worked in each building
 
 ```
@@ -254,13 +252,13 @@ WHERE Role LIKE 'Artist';
 SELECT DISTINCT Role, COUNT(*) FROM Employees 
 GROUP BY Role;
 ```
-
 3. Find the total number of years employed by all Engineers. 
 ```
 SELECT Role, SUM(Years_employed) FROM Employees
 GROUP BY Role
 HAVING Role = 'Engineer';
 ```
+
 
 # SQL Lesson 12: Order of execution of a Query
 
@@ -279,6 +277,7 @@ Movies.Id = Boxoffice.Movie_id
 GROUP BY Director;
 ```
 
+
 # SQL Lesson 13: Inserting rows
 
 Exercise 13 — Tasks
@@ -291,6 +290,7 @@ INSERT INTO Movies VALUES (4, 'Toy Story 4', 'John Lasseter', 2013,100);
 ```
 INSERT INTO Boxoffice VALUES(4,8.7,340000000,270000000);
 ```
+
 
 # SQL Lesson 14: Updating rows
 
@@ -334,11 +334,11 @@ Exercise 15 — Tasks
 ```
 DELETE FROM Movies WHERE Year < 2005;
 ```
-
 2.Andrew Stanton has also left the studio, so please remove all movies directed by him.
 ```
 DELETE FROM Movies WHERE Director = 'Andrew Stanton';
 ```
+
 
 # SQL Lesson 16: Creating tables
 
@@ -358,6 +358,7 @@ Version REAL,
 Download_count INTEGER);
 ```
 
+
 # SQL Lesson 17: Altering tables
 
 Exercise 17 — Tasks
@@ -374,6 +375,7 @@ ALTER TABLE Movies
   ADD COLUMN Language TEXT DEFAULT 'English';
 ```
 
+
 # SQL Lesson 18: Dropping tables
 
 Exercise 18 — Tasks
@@ -388,4 +390,5 @@ DROP TABLE IF EXISTS Movies ;
 DROP TABLE IF EXISTS BoxOffice  ;
 ```
 
-# 
+
+<h3 align="center">  THE END   <hr></h3>
